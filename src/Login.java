@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -114,6 +112,11 @@ public class Login extends javax.swing.JFrame {
         forgottenpasswordtxt.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         forgottenpasswordtxt.setForeground(new java.awt.Color(102, 153, 255));
         forgottenpasswordtxt.setText("Forgotten Password?");
+        forgottenpasswordtxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                forgottenpasswordtxtMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,15 +192,23 @@ passwordtxt.setText("");
     public void forgotPassword(){
         String k=JOptionPane.showInputDialog(null, "Memebers_ID or Username");
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/upepeo\"\n" +
-"        ,\"root\", \"Jose19#*");
-            String sql="SELECT password from membershipIdentity WHERE membersID=?";
-            PreparedStatement ps=conn.prepareStatement(sql);
+           Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/upepeo"
+        ,"root", "Jose19#*");
+                        System.out.println("maniac");
+            String sql="SELECT Password from membershipIdentity WHERE Username=?";
+            PreparedStatement ps=con.prepareStatement(sql);
+
             ps.setString(1, k);
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
                 JOptionPane.showMessageDialog(null,"password");
+                Forgotenpasssword fg=new Forgotenpasssword();
+                fg.pack();
+                fg.setVisible(true);
+                fg.setLocationRelativeTo(null);
+                fg.validatepassword();
+                fg.show();
                 
             }
         }catch(HeadlessException | ClassNotFoundException | SQLException ex){
@@ -223,14 +234,12 @@ if(rs.next()){
         up.pack();
         this.dispose();
         up.setLocationRelativeTo(null);
-    
 }
 else{
     JOptionPane.showMessageDialog(null, "Invalid credentials");
             membershipidtxt.setText("");
             passwordtxt.setText("");
 }
-
 
 rs.close();
 con.close();
@@ -259,7 +268,7 @@ this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_createlbMouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-if(membershipidtxt.getText().contains("king") && passwordtxt.getText().contains("Main1234")){
+if(membershipidtxt.getText().contains("ADMIN") && passwordtxt.getText().contains("1234")){
   ADMIN_CHECK rg=new ADMIN_CHECK();
   rg.show_members();
   rg.setVisible(true);
@@ -274,6 +283,11 @@ else{
 JOptionPane.showMessageDialog(null,"Invalid credentials for an ADMIN");
 }// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void forgottenpasswordtxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgottenpasswordtxtMouseClicked
+forgotPassword();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_forgottenpasswordtxtMouseClicked
 
     /**
      * @param args the command line arguments

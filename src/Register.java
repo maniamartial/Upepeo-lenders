@@ -11,16 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.util.*;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author hp
- */
 public class Register extends javax.swing.JFrame {
 
     /**
@@ -104,6 +94,11 @@ public class Register extends javax.swing.JFrame {
         confirmpasswordtxt.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 confirmpasswordtxtFocusLost(evt);
+            }
+        });
+        confirmpasswordtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmpasswordtxtActionPerformed(evt);
             }
         });
 
@@ -203,7 +198,7 @@ public class Register extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel11))))
-                        .addGap(18, 111, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1)
                             .addComponent(jScrollPane5)
@@ -220,14 +215,14 @@ public class Register extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(44, 44, 44)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(133, 133, 133))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -393,6 +388,10 @@ this.dispose();
     private void phonetxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phonetxtMouseEntered
 phonetxt.setBackground(Color.yellow);        // TODO add your handling code here:
     }//GEN-LAST:event_phonetxtMouseEntered
+
+    private void confirmpasswordtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmpasswordtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmpasswordtxtActionPerformed
 
     /**
      * @param args the command line arguments

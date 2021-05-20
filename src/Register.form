@@ -54,7 +54,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace type="separate" pref="111" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
@@ -75,7 +75,7 @@
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <EmptySpace pref="140" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -84,7 +84,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel13" max="32767" attributes="0"/>
+              <Component id="jLabel13" pref="831" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -245,6 +245,7 @@
     <Component class="javax.swing.JPasswordField" name="confirmpasswordtxt">
       <Events>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="confirmpasswordtxtFocusLost"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmpasswordtxtActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane4">
