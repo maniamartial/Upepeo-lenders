@@ -194,7 +194,7 @@ passwordtxt.setText("");
         try{
            Class.forName("com.mysql.cj.jdbc.Driver");
 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/upepeo"
-        ,"root", "Jose19#*");
+        ,"root", "12345678");
                         System.out.println("maniac");
             String sql="SELECT Password from membershipIdentity WHERE Username=?";
             PreparedStatement ps=con.prepareStatement(sql);
@@ -220,7 +220,7 @@ public void createConnection(){
 try{
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/upepeo"
-        ,"root", "Jose19#*");
+        ,"root", "12345678");
 
 String sql="SELECT * FROM membershipidentity WHERE Username=? and Password=?";
 PreparedStatement pstm=con.prepareStatement(sql);

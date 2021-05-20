@@ -18,6 +18,7 @@ public class ADMIN_CHECK extends javax.swing.JFrame {
     /**
      * Creates new form ADMIN_CHECK
      */
+    
     public ADMIN_CHECK() {
         initComponents();
     }
@@ -26,13 +27,13 @@ public class ADMIN_CHECK extends javax.swing.JFrame {
           try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/upepeo"
-        ,"root", "Jose19#*");
-            
+        ,"root", "12345678");
+              System.out.println("Connected");
            if(value.equals("General")){
             String sql = "INSERT INTO general VALUES (?,?)";
             PreparedStatement stm=con.prepareStatement(sql);
             
-stm.setString(1, movieidtxt.getText());
+stm.setString(1, movienametxt.getText());
 stm.setString(2,movieidtxt.getText());
 System.out.println("connected");
 stm.executeUpdate();
@@ -105,7 +106,7 @@ ArrayList<members> membersList=new ArrayList<>();
 try{
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/upepeo"
-        ,"root", "Jose19#*");
+        ,"root", "12345678");
 
 String sql="SELECT * FROM membershipidentity";
 Statement pstm=con.createStatement();

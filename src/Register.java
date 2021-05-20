@@ -327,9 +327,9 @@ public void createConnection(){
 try{
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/upepeo"
-        ,"root", "Jose19#*");
+        ,"root", "12345678");
     
-    String query="INSERT INTO membershipidentity VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+String query="INSERT INTO membershipidentity VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 PreparedStatement stm=con.prepareStatement(query);
 stm.setString(1,firstnametxt.getText());
 stm.setString(2,lastnametxt.getText());
@@ -348,7 +348,6 @@ stm.setString(8,Registered_date);
 stm.setString(9,usernametxt.getText());
 stm.setString(10, streettxt.getText());
 stm.setString(11,housetxt.getText());
-
 
 
 stm.executeUpdate();
